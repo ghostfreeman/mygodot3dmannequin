@@ -1,3 +1,5 @@
+
+
 extends PlayerState
 # Parent state for all movement-related states for the Player.
 # Holds all of the base movement logic.
@@ -17,7 +19,12 @@ var velocity: = Vector3.ZERO
 func unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump"):
 		_state_machine.transition_to("Move/Air", { velocity = velocity, jump_impulse = jump_impulse })
-
+	
+	if event.is_action_pressed("interact"):
+		print("Interact thrown")
+		var collider2 = player.camera.aim_ray.get_collider()
+		print(collider2)
+		collider2.queue_free() # TODO Don't destroy any meshes tied to map and terrain 
 
 func physics_process(delta: float) -> void:
 	var input_direction: = get_input_direction()

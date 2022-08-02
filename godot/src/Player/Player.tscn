@@ -48,4 +48,13 @@ script = ExtResource( 7 )
 [node name="CameraRig" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.38644, 0 )
 
+[node name="ObjectLook" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.38299, -0.923753, 0, 0.923753, 0.38299, 0, 1.42741, 0.155756 )
+visible = false
+enabled = true
+cast_to = Vector3( 0, -5, 0 )
+collide_with_areas = true
+debug_shape_custom_color = Color( 0.541176, 0.0941176, 0.0941176, 1 )
+debug_shape_thickness = 5
+
 [editable path="Mannequiny"]

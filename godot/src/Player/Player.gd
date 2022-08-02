@@ -7,6 +7,7 @@ extends KinematicBody
 onready var camera: CameraRig = $CameraRig
 onready var skin: Mannequiny = $Mannequiny
 onready var state_machine: StateMachine = $StateMachine
+onready var object_look: RayCast = $ObjectLook
 
 
 func _get_configuration_warning() -> String:
